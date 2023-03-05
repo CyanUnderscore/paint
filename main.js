@@ -3,19 +3,42 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
+localStorage.setItem("penMode", localStorage.getItem("penMode") || 0)
+if (localStorage.getItem("penMode") == 0) {
+    document.getElementById("pen").textContent = "exit pen mode";
+}
+
+function PenMode() {
+    if (localStorage.getItem("penMode") != 1) {
+        document.getElementById("pen").textContent = "enter pen mode";
+        localStorage.setItem("penMode", 1);
+    }else{
+        document.getElementById("pen").textContent = "exit pen mode";
+        localStorage.setItem("penMode", 0);
+    }
+}
+
 let x = 0;
 let y = 0;
 let sizeX = 0;
 let sizeY = 0;
 
 canvas.addEventListener('click', function(e) {
-    document.getElementById("xCoordinate").value = e.screenX - 549;
-    document.getElementById("yCoordinate").value = e.screenY - 117 *2;
+    if (localStorage.getItem("penMode") == 1) {
+        document.getElementById("xCoordinate").value = e.screenX - 495;
+        document.getElementById("yCoordinate").value = e.screenY - 117 *2 -60;
+    }
+    else {
+        document.getElementById("xCoordinate").value = e.screenX - 495;
+        document.getElementById("yCoordinate").value = e.screenY - 117 *2 -60;
+        generate();
+    }
 });
+
 
 function logKey(e) {
     document.getElementById("mousex").innerText = `
-        Mouse X/Y: ${e.screenX - 549}, ${e.screenY- 117 *2}`;
+        Mouse X/Y: ${e.screenX - 495}, ${e.screenY- 117 *2- 60 }`;
     }
 canvas.addEventListener("mousemove", logKey);
 

@@ -6,66 +6,6 @@
     <body>
         <center><h2>Paint</h2>
             <table>
-                <!--
-                <tr>
-                    <td><canvas id="myCanvas" width="300" height="150"></canvas></td>
-                    <td>
-                        <div>
-                            <table style="border: 1px solid black; border-radius: 10px; background-color: gray;">
-                                <tr>
-                                    <th> couleur </th>
-                                    <th> taille </th>
-                                    <th> forme </th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="whiteButton" onclick="Change('color', 'white')">Blanc</button>
-                                    </td>
-                                    <td>
-                                        <button id="1px" onclick="Change('size', '1px')">1px</button>
-                                    </td>
-                                    <td>
-                                        <button id="squareButton" onclick="Change('shape', 'square')">carré</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="blackButton" onclick="Change('color', 'black')">noir</button>
-                                    </td>
-                                    <td>
-                                        <button id="5px" onclick="Change('size', '5px')">5px</button>
-                                    </td>
-                                    <td>
-                                        <button id="cirleButton" onclick="Change('shape', 'circle')">cercle</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="redButton" onclick="Change('color', 'red')">rouge</button>
-                                    </td>
-                                    <td>
-                                        <button id="10px" onclick="Change('size', '10px')">10px</button>
-                                    </td>
-                                    <td>
-                                        <button id="??Button" onclick="Change('shape','circle')">??</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="greenButton" onclick="Change('color', 'green')">vert</button>
-                                    </td>
-                                    <td>
-                                        <button id="15px" onclick="Change('size', '15px')">15px</button>
-                                    </td>
-                                    <td>
-                                        <button id="??Button" onclick="Change('shape', 'circle')">??</button>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </td>
-                </tr>
-                -->
                 <tr>
                     <td><canvas id="myCanvas" width="500" height="500" style="background-color: beige;"></canvas></td>
                     <td>
@@ -81,6 +21,7 @@
                     <input type="number" id="sizeX"><br>
                     <p>sizeY = </p>
                     <input type="number" id="sizeY">
+                    <button onclick="PenMode()" id="pen">enter pen mode</button>
                     <button onclick="generate()">generate</button>
                     <button onclick="reset()">clear All</button><br>
                     <p id="mousex"></p><br>
